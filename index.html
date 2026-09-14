@@ -10,20 +10,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="juan-fit">
-    <main class="app-shell">
-      <header class="topbar"><a class="brand" href="#inicio">Juan <i>Fit</i></a><button class="profile-chip" data-action="profile" aria-label="Editar perfil de Juan">J</button></header>
+    <main>
+      <header class="top"><a class="brand" href="#inicio">Juan <i>Fit</i></a><button class="avatar" aria-label="Perfil de Juan">J</button></header>
       <div id="app" aria-live="polite"></div>
     </main>
-    <button class="ai-fab" id="ai-fab" aria-label="Abrir asistente IA"><span>✦</span><b>IA</b></button>
-    <nav class="bottom-nav" aria-label="Navegación principal">
+    <button class="fab" id="fab" aria-label="Abrir asistente IA">✦</button>
+    <nav class="nav" aria-label="Navegación principal">
       <button data-page="inicio">⌂<span>Inicio</span></button><button data-page="menu">◫<span>Menú</span></button><button data-page="progreso">◌<span>Progreso</span></button><button data-page="compra">♧<span>Compra</span></button><button data-page="auditoria">▤<span>Auditoría</span></button>
     </nav>
-    <div class="modal-backdrop" id="modal-root"></div>
-    <script src="../app.js"></script>
-    <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('../service-worker.js');</script>
+    <div id="modal"></div>
+    <script src="app.js"></script>
+    <script>window.modal=(content)=>setTimeout(()=>{document.querySelector('#modal').innerHTML=`<div class="modal"><section class="sheet"><button class="close" data-act="close">×</button>${content}</section></div>`},0);</script>
+    <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js');</script>
   </body>
 </html>
